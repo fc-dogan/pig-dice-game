@@ -36,8 +36,12 @@ $(document).ready(function() {
         if (currentRoll == 1) {
             if (turn == 1) {
                 turn = 0;
+                $("#player1-turn").removeClass("your-turn");
+                $("#player2-turn").addClass("your-turn");
             } else{
                 turn = 1;
+                $("#player2-turn").removeClass("your-turn");
+                $("#player1-turn").addClass("your-turn");
             }
             tempScore = 0;
             $("#temporary-score").text(tempScore);
@@ -52,19 +56,36 @@ $(document).ready(function() {
         if (turn == 1) {
             player1.updateScore();
             $("#player1-score").text(player1.score);
-            turn = 0;
-            tempScore = 0;
-            $("#temporary-score").text(tempScore);
-            $("#current-roll").text(0);
+                if ( player1.score >= 100){
+                    $("#play-screen").hide();
+                    $("#winner").text(player1.name);
+                    $("#win-screen").show();
+                } else { turn = 0;
+                        $("#player1-turn").removeClass("your-turn");
+                        $("#player2-turn").addClass("your-turn");
+                        tempScore = 0;
+                        $("#temporary-score").text(tempScore);
+                        $("#current-roll").text(0);
+                    }
 
         } else {
             player2.score += tempScore;
             $("#player2-score").text(player2.score);
-            turn = 1;
-            tempScore = 0;
-            $("#temporary-score").text(tempScore);
-            $("#current-roll").text(0);
+                if (player2.score >= 100){
+                    $("#play-screen").hide();
+                    $("#winner").text(player2.name);
+                    $("#win-screen").show();
+                } else { 
+                    turn = 1;
+                    $("#player2-turn").removeClass("your-turn");
+                    $("#player1-turn").addClass("your-turn");
+                    tempScore = 0;
+                    $("#temporary-score").text(tempScore);
+                    $("#current-roll").text(0);
+                    }
+            
         }
+
     });
 
 });

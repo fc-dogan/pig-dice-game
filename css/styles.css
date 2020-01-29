@@ -28,3 +28,7 @@ button {
 #play-screen, #win-screen {
     display: none;
 }
+
+.your-turn {
+    border: 5px solid red;
+}
