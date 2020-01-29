@@ -24,3 +24,7 @@ h1 {
 button {
     margin: 15px;
 }
+
+#play-screen, #win-screen {
+    display: none;
+}
