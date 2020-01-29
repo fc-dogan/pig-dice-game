@@ -18,6 +18,7 @@ function getNumber() {
 var player1 = "";
 var player2 = "";
 var tempScore = 0;
+var turn = 1;
 
 $(document).ready(function() {
    //click function for start screen
@@ -31,13 +32,39 @@ $(document).ready(function() {
     //click function for roll
     $("#roll").click(function() {
         var currentRoll = getNumber();
-        console.log(currentRoll);
-        // if ( currentRoll == 1 ) {
-        //     //switch the player
-        //     tempScore = 0;
-        // } else {
-        //    return tempScore += currentRoll;
-        // }
+        $("#current-roll").text(currentRoll);
+        if (currentRoll == 1) {
+            if (turn == 1) {
+                turn = 0;
+            } else{
+                turn = 1;
+            }
+            tempScore = 0;
+            $("#temporary-score").text(tempScore);
+        } else {
+           tempScore += currentRoll;
+           $("#temporary-score").text(tempScore);
+        }
+        console.log(tempScore);
     });
     //click function for hold
+    $("#hold-button").click(function() {
+        if (turn == 1) {
+            player1.updateScore();
+            $("#player1-score").text(player1.score);
+            turn = 0;
+            tempScore = 0;
+            $("#temporary-score").text(tempScore);
+            $("#current-roll").text(0);
+
+        } else {
+            player2.score += tempScore;
+            $("#player2-score").text(player2.score);
+            turn = 1;
+            tempScore = 0;
+            $("#temporary-score").text(tempScore);
+            $("#current-roll").text(0);
+        }
+    });
+
 });

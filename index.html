@@ -18,11 +18,11 @@
         <div class="row">
             <div class="col-md-6">
               <label for="player1">Enter name for first player:</label>
-              <input type="text" id="player1">
+              <input type="text" id="player1" value="me">
             </div>
             <div class="col-md-6">
               <label for="player2">Enter name for second player:</label>
-              <input type="text" id="player2">
+              <input type="text" id="player2" value="you">
             </div>
         </div>
         <div class="row">
@@ -37,23 +37,25 @@
             <div class="row">
               <div class="col-md-6">
                 <div>
-                  <h3 id="player1-name"></h3>
-                  <p id="player1-score">Player 1 Score:</p>
+                  <h3 id="player1-name">Player 1 Score:</h3>
+                  <p id="player1-score"></p>
                 </div>
               </div>
               <div class="col-md-6">
-                <h3 id="player2-name"></h3>
-                <p id="player2-score">Player 2 Score:</p>
+                <h3 id="player2-name">Player 2 Score:</h3>
+                <p id="player2-score"></p>
               </div>
-
             </div>
             <div class="row">
               <button type="button" id="roll">Roll</button>
-              <p id="current-roll">Current Roll:</p>
-              <p id="temporary-score">Temporary Score:</p>
+              <h3>Current Roll:</h3>
+              <p id="current-roll"></p>
+              <h3>Temporary Score:</h3>
+              <p id="temporary-score"></p>
               <button id="hold-button" type="button">Hold</button>
             </div>
           </div>
+
           <div class="box" id="win-screen">
             <p id="winner">The winner is: </p>
             <a href="index.html">Play again!</a>
