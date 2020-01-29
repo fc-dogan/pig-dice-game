@@ -7,10 +7,19 @@ body {
     background-repeat: no-repeat;
     background-size: cover;    
     text-align: center;
+    font-size: 180%;
 }
 
 h1 {
     color: yellow;
+}
+
+input {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5%;
+    text-align: center;
 }
 
 .box {
@@ -22,7 +31,7 @@ h1 {
 }
 
 button {
-    margin: 15px;
+    margin: 25px;
 }
 
 #play-screen, #win-screen {
@@ -31,4 +40,37 @@ button {
 
 .your-turn {
     border: 5px solid red;
+    border-radius: 15%
+}
+
+#current-roll, #temporary-score {
+    border: 2px solid black;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+#hold-button {
+    border: 3px solid black;
+    border-radius: 10%;
+    background-image: radial-gradient(silver, darkblue);
+    width: 150px;
+    height: 50px;
+}
+
+#roll-button {
+    border: 3px solid black;
+    border-radius: 10%;
+    background-image: radial-gradient(yellow, red);
+    width: 150px;
+    height: 50px;
+    color: black;
+    font-style: bold;
+}
+
+#win-screen {
+    /* font-size: 180%; */
+}
+
+#winner {
+    font-size: 150px;
 }

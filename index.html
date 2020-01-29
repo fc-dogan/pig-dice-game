@@ -18,11 +18,11 @@
         <div class="row">
             <div class="col-md-6">
               <label for="player1">Enter name for first player:</label>
-              <input type="text" id="player1" value="me">
+              <input type="text" id="player1">
             </div>
             <div class="col-md-6">
               <label for="player2">Enter name for second player:</label>
-              <input type="text" id="player2" value="you">
+              <input type="text" id="player2">
             </div>
         </div>
         <div class="row">
@@ -37,19 +37,19 @@
             <div class="row">
               <div class="col-md-6">
                 <div id="player1-turn" class="your-turn">
-                  <h3 id="player1-name">Player 1 Score:</h3>
+                  <h3><span id="player1-name"></span>'s Score:</h3>
                   <p id="player1-score"></p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div id="player2-turn">
-                  <h3 id="player2-name">Player 2 Score:</h3>
+                  <h3><span id="player2-name"></span>'s Score:</h3>
                   <p id="player2-score"></p>
                 </div>
               </div>
             </div>
             <div class="row">
-              <button type="button" id="roll">Roll</button>
+              <button id="roll-button" type="button">Roll</button>
               <h3>Current Roll:</h3>
               <p id="current-roll"></p>
               <h3>Temporary Score:</h3>

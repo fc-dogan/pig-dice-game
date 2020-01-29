@@ -26,11 +26,13 @@ $(document).ready(function() {
         event.preventDefault();
         player1 = new Player($("input#player1").val());
         player2 = new Player($("input#player2").val());
+        $("#player1-name").text(player1.name);
+        $("#player2-name").text(player2.name);
         $("#start-screen").hide();
         $("#play-screen").show();
     });
     //click function for roll
-    $("#roll").click(function() {
+    $("#roll-button").click(function() {
         var currentRoll = getNumber();
         $("#current-roll").text(currentRoll);
         if (currentRoll == 1) {
